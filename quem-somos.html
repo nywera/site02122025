@@ -8,44 +8,40 @@
   <script src="carrinho.js" defer></script>
 </head>
 <body>
-  <!-- Top Bar com Redes Sociais -->
-  <div class="top-bar">
-    <div class="social-icons">
-      <a href="#" aria-label="Facebook">📘</a>
-      <a href="#" aria-label="Twitter">🐦</a>
-      <a href="#" aria-label="Email">📧</a>
-      <a href="#" aria-label="Instagram">📷</a>
-      <a href="#" aria-label="YouTube">▶️</a>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">🎂</span>
+        <div class="logo-text">
+          <h1>Confeitaria Maria Silva</h1>
+          <p>Bolos artesanais feitos com amor</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="carrinho.html" class="carrinho-header">
+          🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+        </a>
+      </div>
     </div>
-    <div class="logo-section">
-      <h1 class="site-title">Confeitaria Maria Silva</h1>
-      <span class="logo-icon">🎂</span>
-    </div>
-    <div class="search-bar">
-      <input type="search" placeholder="Buscar..." aria-label="Buscar">
-      <button type="button" aria-label="Buscar">🔍</button>
-    </div>
-  </div>
+  </header>
 
-  <!-- Menu de Navegação Principal -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="quem-somos.html" class="active">Quem Somos</a></li>
-      <li><a href="historia.html">História</a></li>
-      <li><a href="catalogo.html">Catálogo</a></li>
-      <li><a href="contato.html">Contato</a></li>
-      <li><a href="carrinho.html" class="carrinho-link">
-        🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
-      </a></li>
-    </ul>
+  <nav>
+    <div class="nav-container">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="quem-somos.html" class="active">Quem Somos</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main>
+  <main class="container">
     <h2>Quem Somos</h2>
     
     <div class="card">
-      <p>A <span class="highlight">Confeitaria Maria Silva</span> nasceu do talento e dedicação de Maria Silva, confeiteira apaixonada por transformar momentos especiais em memórias doces. Há 10 anos, Maria cria bolos personalizados feitos em casa, sempre com muito carinho e atenção aos detalhes.</p>
+      <p>A <strong style="color: var(--cor-verde);">Confeitaria Maria Silva</strong> nasceu do talento e dedicação de Maria Silva, confeiteira apaixonada por transformar momentos especiais em memórias doces. Há 10 anos, Maria cria bolos personalizados feitos em casa, sempre com muito carinho e atenção aos detalhes.</p>
       
       <p>Agora, com o desejo de expandir, a confeitaria abre suas portas para novos clientes, mantendo o mesmo cuidado artesanal que conquistou amigos e familiares.</p>
     </div>
@@ -58,20 +54,20 @@
     <div class="card">
       <h3>Nossos Valores</h3>
       <ul style="list-style: none; padding-left: 0;">
-        <li style="padding: 10px 0; padding-left: 30px; position: relative;">
-          <span style="position: absolute; left: 0; color: var(--cor-verde); font-size: 1.5em;">❤️</span>
+        <li style="padding: 15px 0; padding-left: 40px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--cor-verde); font-size: 1.8em;">❤️</span>
           <strong>Amor pelo que fazemos:</strong> Cada bolo é preparado com paixão e dedicação.
         </li>
-        <li style="padding: 10px 0; padding-left: 30px; position: relative;">
-          <span style="position: absolute; left: 0; color: var(--cor-verde); font-size: 1.5em;">✨</span>
+        <li style="padding: 15px 0; padding-left: 40px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--cor-verde); font-size: 1.8em;">✨</span>
           <strong>Qualidade artesanal:</strong> Mantemos técnicas tradicionais com ingredientes selecionados.
         </li>
-        <li style="padding: 10px 0; padding-left: 30px; position: relative;">
-          <span style="position: absolute; left: 0; color: var(--cor-verde); font-size: 1.5em;">🎯</span>
+        <li style="padding: 15px 0; padding-left: 40px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--cor-verde); font-size: 1.8em;">🎯</span>
           <strong>Personalização:</strong> Cada bolo é único, criado especialmente para você.
         </li>
-        <li style="padding: 10px 0; padding-left: 30px; position: relative;">
-          <span style="position: absolute; left: 0; color: var(--cor-verde); font-size: 1.5em;">🤝</span>
+        <li style="padding: 15px 0; padding-left: 40px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--cor-verde); font-size: 1.8em;">🤝</span>
           <strong>Confiança:</strong> Transparência total em nossos ingredientes e processos.
         </li>
       </ul>
@@ -79,7 +75,28 @@
   </main>
 
   <footer>
-    <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Confeitaria Maria Silva</h3>
+        <p>Bolos personalizados feitos com carinho há mais de 10 anos</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>📞 (11) 99999-9999</p>
+        <p>📧 contato@confeitariamariasilva.com</p>
+        <p>📍 Rio Claro - SP</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+    </div>
   </footer>
 </body>
 </html>

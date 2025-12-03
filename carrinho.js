@@ -119,7 +119,11 @@ class Carrinho {
     if (contador) {
       const totalItens = this.itens.reduce((sum, item) => sum + item.quantidade, 0);
       contador.textContent = totalItens;
-      contador.style.display = totalItens > 0 ? 'block' : 'none';
+      if (totalItens > 0) {
+        contador.classList.add('show');
+      } else {
+        contador.classList.remove('show');
+      }
     }
   }
 

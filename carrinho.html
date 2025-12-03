@@ -8,120 +8,137 @@
   <script src="carrinho.js" defer></script>
 </head>
 <body>
-  <!-- Top Bar com Redes Sociais -->
-  <div class="top-bar">
-    <div class="social-icons">
-      <a href="#" aria-label="Facebook">📘</a>
-      <a href="#" aria-label="Twitter">🐦</a>
-      <a href="#" aria-label="Email">📧</a>
-      <a href="#" aria-label="Instagram">📷</a>
-      <a href="#" aria-label="YouTube">▶️</a>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">🎂</span>
+        <div class="logo-text">
+          <h1>Confeitaria Maria Silva</h1>
+          <p>Bolos artesanais feitos com amor</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="carrinho.html" class="carrinho-header">
+          🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+        </a>
+      </div>
     </div>
-    <div class="logo-section">
-      <h1 class="site-title">Confeitaria Maria Silva</h1>
-      <span class="logo-icon">🎂</span>
-    </div>
-    <div class="search-bar">
-      <input type="search" placeholder="Buscar..." aria-label="Buscar">
-      <button type="button" aria-label="Buscar">🔍</button>
-    </div>
-  </div>
+  </header>
 
-  <!-- Menu de Navegação Principal -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="quem-somos.html">Quem Somos</a></li>
-      <li><a href="historia.html">História</a></li>
-      <li><a href="catalogo.html">Catálogo</a></li>
-      <li><a href="contato.html">Contato</a></li>
-      <li><a href="carrinho.html" class="active carrinho-link">
-        🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
-      </a></li>
-    </ul>
+  <nav>
+    <div class="nav-container">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main>
-    <h2>🛒 Seu Carrinho de Compras</h2>
+  <main class="container">
+    <h2 class="section-title">🛒 Seu Carrinho de Compras</h2>
     
     <div id="carrinho-itens" class="carrinho-container">
       <!-- Itens serão renderizados aqui pelo JavaScript -->
     </div>
 
     <div id="carrinho-resumo" class="carrinho-resumo" style="display: none;">
-      <div class="card">
-        <h3>Resumo do Pedido</h3>
-        <div class="resumo-linha">
-          <span>Subtotal:</span>
-          <span id="carrinho-total">R$ 0,00</span>
-        </div>
-        <div class="resumo-linha">
-          <span>Taxa de entrega:</span>
-          <span>A combinar</span>
-        </div>
-        <div class="resumo-total">
-          <span>Total:</span>
-          <span id="carrinho-total-final">R$ 0,00</span>
-        </div>
-        <button onclick="finalizarPedidoWhatsApp()" class="btn btn-finalizar">Finalizar Pedido</button>
-        <a href="catalogo.html" class="btn btn-secundario" style="margin-top: 10px; display: inline-block;">Continuar Comprando</a>
+      <h3>Resumo do Pedido</h3>
+      <div class="resumo-linha">
+        <span>Subtotal:</span>
+        <span id="carrinho-total">R$ 0,00</span>
       </div>
+      <div class="resumo-linha">
+        <span>Taxa de entrega:</span>
+        <span>A combinar</span>
+      </div>
+      <div class="resumo-total">
+        <span>Total:</span>
+        <span id="carrinho-total-final">R$ 0,00</span>
+      </div>
+      <button onclick="abrirFormularioPedido()" class="btn btn-success" style="width: 100%; margin-top: 20px; padding: 15px; font-size: 1.1em;">
+        Finalizar Pedido
+      </button>
+      <a href="catalogo.html" class="btn btn-secondary" style="width: 100%; margin-top: 10px; text-align: center; display: block;">
+        Continuar Comprando
+      </a>
     </div>
 
-    <!-- Modal de Checkout -->
-    <div id="modal-checkout" class="modal">
-      <div class="modal-content modal-checkout-content">
-        <span class="modal-close" onclick="fecharCheckout()">&times;</span>
-        <h2>Finalizar Encomenda</h2>
-        <form id="form-checkout" onsubmit="finalizarPedido(event)">
+    <!-- Modal Formulário de Pedido -->
+    <div id="modal-pedido" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="fecharFormularioPedido()">&times;</button>
+        <h2>Finalizar Pedido</h2>
+        <p style="color: var(--cor-texto-claro); margin-bottom: 25px;">Preencha seus dados para finalizar a encomenda</p>
+        
+        <form id="form-pedido" onsubmit="enviarPedidoWhatsApp(event)">
           <div class="form-group">
-            <label for="checkout-nome">Nome Completo *</label>
-            <input type="text" id="checkout-nome" required>
+            <label for="pedido-nome">Nome Completo *</label>
+            <input type="text" id="pedido-nome" required placeholder="Seu nome completo">
           </div>
-          <div class="form-group">
-            <label for="checkout-telefone">Telefone *</label>
-            <input type="tel" id="checkout-telefone" required placeholder="(11) 99999-9999">
-          </div>
-          <div class="form-group">
-            <label for="checkout-email">Email *</label>
-            <input type="email" id="checkout-email" required>
-          </div>
-          <div class="form-group">
-            <label for="checkout-endereco">Endereço para Entrega *</label>
-            <input type="text" id="checkout-endereco" required placeholder="Rua, número, bairro">
-          </div>
-          <div class="form-group">
-            <label for="checkout-cidade">Cidade *</label>
-            <input type="text" id="checkout-cidade" required value="Rio Claro">
-          </div>
-          <div class="form-group">
-            <label for="checkout-data">Data de Entrega Desejada *</label>
-            <input type="date" id="checkout-data" required min="">
-          </div>
-          <div class="form-group">
-            <label for="checkout-horario">Horário Preferencial</label>
-            <select id="checkout-horario">
-              <option value="">Selecione</option>
-              <option value="manha">Manhã (8h - 12h)</option>
-              <option value="tarde">Tarde (12h - 18h)</option>
-              <option value="noite">Noite (18h - 20h)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="checkout-observacoes">Observações Adicionais</label>
-            <textarea id="checkout-observacoes" placeholder="Instruções especiais, ponto de referência, etc."></textarea>
-          </div>
-          <div class="resumo-checkout">
-            <h3>Resumo do Pedido</h3>
-            <div id="checkout-resumo-itens"></div>
-            <div class="resumo-total">
-              <span>Total:</span>
-              <span id="checkout-total">R$ 0,00</span>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pedido-whatsapp">WhatsApp *</label>
+              <input type="tel" id="pedido-whatsapp" required placeholder="(14) 99999-9999">
+            </div>
+            <div class="form-group">
+              <label for="pedido-email">Email</label>
+              <input type="email" id="pedido-email" placeholder="seu@email.com">
             </div>
           </div>
+
+          <div class="form-group">
+            <label for="pedido-endereco">Endereço Completo *</label>
+            <input type="text" id="pedido-endereco" required placeholder="Rua, número, bairro">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pedido-cidade">Cidade *</label>
+              <input type="text" id="pedido-cidade" required value="Rio Claro">
+            </div>
+            <div class="form-group">
+              <label for="pedido-cep">CEP</label>
+              <input type="text" id="pedido-cep" placeholder="00000-000">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pedido-data">Data de Entrega Desejada *</label>
+              <input type="date" id="pedido-data" required min="">
+            </div>
+            <div class="form-group">
+              <label for="pedido-horario">Horário Preferencial</label>
+              <select id="pedido-horario">
+                <option value="">Selecione</option>
+                <option value="Manhã (8h - 12h)">Manhã (8h - 12h)</option>
+                <option value="Tarde (12h - 18h)">Tarde (12h - 18h)</option>
+                <option value="Noite (18h - 20h)">Noite (18h - 20h)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pedido-observacoes">Observações Adicionais</label>
+            <textarea id="pedido-observacoes" placeholder="Instruções especiais, ponto de referência, informações sobre o evento, etc."></textarea>
+          </div>
+
+          <div class="card" style="background: var(--cor-fundo-cinza); margin: 20px 0;">
+            <h3 style="margin-top: 0;">Resumo do Pedido</h3>
+            <div id="resumo-pedido-itens"></div>
+            <div class="resumo-total">
+              <span>Total:</span>
+              <span id="resumo-pedido-total">R$ 0,00</span>
+            </div>
+          </div>
+
           <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <button type="button" onclick="fecharCheckout()" class="btn btn-secundario">Cancelar</button>
-            <button type="submit" class="btn btn-finalizar">Confirmar Encomenda</button>
+            <button type="button" onclick="fecharFormularioPedido()" class="btn btn-secondary">Cancelar</button>
+            <button type="submit" class="btn btn-success">Enviar Pedido via WhatsApp</button>
           </div>
         </form>
       </div>
@@ -129,14 +146,35 @@
   </main>
 
   <footer>
-    <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Confeitaria Maria Silva</h3>
+        <p>Bolos personalizados feitos com carinho há mais de 10 anos</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>📞 (11) 99999-9999</p>
+        <p>📧 contato@confeitariamariasilva.com</p>
+        <p>📍 Rio Claro - SP</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+    </div>
   </footer>
 
   <script>
     // Atualizar data mínima para hoje
     document.addEventListener('DOMContentLoaded', function() {
       const hoje = new Date().toISOString().split('T')[0];
-      const dataInput = document.getElementById('checkout-data');
+      const dataInput = document.getElementById('pedido-data');
       if (dataInput) {
         dataInput.min = hoje;
       }
@@ -170,108 +208,111 @@
       }
     }
 
-    function finalizarPedidoWhatsApp() {
+    function abrirFormularioPedido() {
       if (carrinho.itens.length === 0) {
         alert('Seu carrinho está vazio!');
         return;
       }
 
-      // Formatar mensagem para WhatsApp
-      let mensagem = '🍰 *Pedido - Confeitaria Maria Silva*\n\n';
-      mensagem += 'Olá! Gostaria de fazer o seguinte pedido:\n\n';
-      
-      // Listar itens
-      mensagem += '*Itens do Pedido:*\n';
-      carrinho.itens.forEach((item, index) => {
-        mensagem += `${index + 1}. *${item.nome}*\n`;
-        if (item.sabor) {
-          mensagem += `   Sabor: ${item.sabor}\n`;
-        }
-        mensagem += `   Quantidade: ${item.quantidade}kg\n`;
-        if (item.observacoes) {
-          mensagem += `   Observações: ${item.observacoes}\n`;
-        }
-        mensagem += `   Preço: R$ ${(item.preco * item.quantidade).toFixed(2)}\n\n`;
-      });
-      
-      // Total
-      const total = carrinho.calcularTotal();
-      mensagem += `*Total: R$ ${total.toFixed(2)}*\n\n`;
-      mensagem += 'Por favor, entre em contato para confirmar os detalhes da entrega.';
-      
-      // Codificar mensagem para URL
-      const mensagemEncoded = encodeURIComponent(mensagem);
-      
-      // Número do WhatsApp (formato: 5514996366473 - com código do país e DDD)
-      const whatsappNumber = '5514996366473';
-      
-      // Redirecionar para WhatsApp
-      window.open(`https://wa.me/${whatsappNumber}?text=${mensagemEncoded}`, '_blank');
-    }
+      const modal = document.getElementById('modal-pedido');
+      const resumoItens = document.getElementById('resumo-pedido-itens');
+      const totalPedido = document.getElementById('resumo-pedido-total');
 
-    function abrirCheckout() {
-      if (carrinho.itens.length === 0) {
-        alert('Seu carrinho está vazio!');
-        return;
-      }
-
-      const modal = document.getElementById('modal-checkout');
-      const resumoItens = document.getElementById('checkout-resumo-itens');
-      const totalCheckout = document.getElementById('checkout-total');
-
-      // Preencher resumo no checkout
+      // Preencher resumo no formulário
       resumoItens.innerHTML = carrinho.itens.map(item => `
-        <div class="checkout-item-resumo">
+        <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--cor-borda);">
           <span>${item.nome} ${item.sabor ? `- ${item.sabor}` : ''} x${item.quantidade}kg</span>
-          <span>R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
+          <span style="font-weight: 600;">R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
         </div>
       `).join('');
 
-      totalCheckout.textContent = `R$ ${carrinho.calcularTotal().toFixed(2)}`;
+      totalPedido.textContent = `R$ ${carrinho.calcularTotal().toFixed(2)}`;
       modal.style.display = 'flex';
     }
 
-    function fecharCheckout() {
-      document.getElementById('modal-checkout').style.display = 'none';
+    function fecharFormularioPedido() {
+      document.getElementById('modal-pedido').style.display = 'none';
     }
 
-    function finalizarPedido(event) {
+    function enviarPedidoWhatsApp(event) {
       event.preventDefault();
       
       const dados = {
-        nome: document.getElementById('checkout-nome').value,
-        telefone: document.getElementById('checkout-telefone').value,
-        email: document.getElementById('checkout-email').value,
-        endereco: document.getElementById('checkout-endereco').value,
-        cidade: document.getElementById('checkout-cidade').value,
-        data: document.getElementById('checkout-data').value,
-        horario: document.getElementById('checkout-horario').value,
-        observacoes: document.getElementById('checkout-observacoes').value,
+        nome: document.getElementById('pedido-nome').value,
+        whatsapp: document.getElementById('pedido-whatsapp').value,
+        email: document.getElementById('pedido-email').value,
+        endereco: document.getElementById('pedido-endereco').value,
+        cidade: document.getElementById('pedido-cidade').value,
+        cep: document.getElementById('pedido-cep').value,
+        data: document.getElementById('pedido-data').value,
+        horario: document.getElementById('pedido-horario').value,
+        observacoes: document.getElementById('pedido-observacoes').value,
         itens: carrinho.itens,
         total: carrinho.calcularTotal()
       };
 
-      // Simular envio (aqui você integraria com backend)
-      alert(`✅ Encomenda realizada com sucesso!\n\nOlá ${dados.nome}, recebemos sua encomenda!\n\nTotal: R$ ${dados.total.toFixed(2)}\n\nEm breve entraremos em contato para confirmar os detalhes da entrega.`);
+      // Formatar mensagem para WhatsApp
+      let mensagem = '🍰 *PEDIDO - CONFEITARIA MARIA SILVA*\n\n';
+      mensagem += '*DADOS DO CLIENTE:*\n';
+      mensagem += `👤 Nome: ${dados.nome}\n`;
+      mensagem += `📱 WhatsApp: ${dados.whatsapp}\n`;
+      if (dados.email) {
+        mensagem += `📧 Email: ${dados.email}\n`;
+      }
+      mensagem += `📍 Endereço: ${dados.endereco}\n`;
+      mensagem += `🏙️ Cidade: ${dados.cidade}\n`;
+      if (dados.cep) {
+        mensagem += `📮 CEP: ${dados.cep}\n`;
+      }
+      mensagem += `📅 Data de Entrega: ${new Date(dados.data).toLocaleDateString('pt-BR')}\n`;
+      if (dados.horario) {
+        mensagem += `⏰ Horário: ${dados.horario}\n`;
+      }
+      if (dados.observacoes) {
+        mensagem += `📝 Observações: ${dados.observacoes}\n`;
+      }
       
-      // Limpar carrinho
-      carrinho.limparCarrinho();
-      fecharCheckout();
+      mensagem += '\n*ITENS DO PEDIDO:*\n';
+      dados.itens.forEach((item, index) => {
+        mensagem += `${index + 1}. *${item.nome}*\n`;
+        if (item.sabor) {
+          mensagem += `   🎂 Sabor: ${item.sabor}\n`;
+        }
+        mensagem += `   📦 Quantidade: ${item.quantidade}kg\n`;
+        if (item.observacoes) {
+          mensagem += `   💬 Obs: ${item.observacoes}\n`;
+        }
+        mensagem += `   💰 Preço: R$ ${(item.preco * item.quantidade).toFixed(2)}\n\n`;
+      });
       
-      // Redirecionar para página inicial
+      mensagem += `*TOTAL: R$ ${dados.total.toFixed(2)}*\n\n`;
+      mensagem += 'Aguardando confirmação. Obrigado! 🎉';
+      
+      // Codificar mensagem para URL
+      const mensagemEncoded = encodeURIComponent(mensagem);
+      
+      // Número do WhatsApp
+      const whatsappNumber = '5514996366473';
+      
+      // Redirecionar para WhatsApp
+      window.open(`https://wa.me/${whatsappNumber}?text=${mensagemEncoded}`, '_blank');
+      
+      // Limpar carrinho após envio
       setTimeout(() => {
+        carrinho.limparCarrinho();
+        fecharFormularioPedido();
+        alert('Pedido enviado com sucesso! Você será redirecionado para o WhatsApp.');
         window.location.href = 'index.html';
-      }, 2000);
+      }, 1000);
     }
 
     // Fechar modal ao clicar fora
     window.addEventListener('click', function(event) {
-      const modal = document.getElementById('modal-checkout');
+      const modal = document.getElementById('modal-pedido');
       if (event.target === modal) {
-        fecharCheckout();
+        fecharFormularioPedido();
       }
     });
   </script>
 </body>
 </html>
-

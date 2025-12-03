@@ -8,136 +8,100 @@
   <script src="carrinho.js" defer></script>
 </head>
 <body>
-  <!-- Top Bar com Redes Sociais -->
-  <div class="top-bar">
-    <div class="social-icons">
-      <a href="#" aria-label="Facebook">📘</a>
-      <a href="#" aria-label="Twitter">🐦</a>
-      <a href="#" aria-label="Email">📧</a>
-      <a href="#" aria-label="Instagram">📷</a>
-      <a href="#" aria-label="YouTube">▶️</a>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">🎂</span>
+        <div class="logo-text">
+          <h1>Confeitaria Maria Silva</h1>
+          <p>Bolos artesanais feitos com amor</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="carrinho.html" class="carrinho-header">
+          🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+        </a>
+      </div>
     </div>
-    <div class="logo-section">
-      <h1 class="site-title">Confeitaria Maria Silva</h1>
-      <span class="logo-icon">🎂</span>
-    </div>
-    <div class="search-bar">
-      <input type="search" placeholder="Buscar..." aria-label="Buscar">
-      <button type="button" aria-label="Buscar">🔍</button>
-    </div>
-  </div>
+  </header>
 
-  <!-- Menu de Navegação Principal -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html" class="active">Início</a></li>
-      <li><a href="quem-somos.html">Quem Somos</a></li>
-      <li><a href="historia.html">História</a></li>
-      <li><a href="catalogo.html">Catálogo</a></li>
-      <li><a href="contato.html">Contato</a></li>
-      <li><a href="carrinho.html" class="carrinho-link">
-        🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
-      </a></li>
-    </ul>
+  <nav>
+    <div class="nav-container">
+      <ul>
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- Hero Banner -->
-  <section class="hero-banner">
-    <div class="hero-content">
+  <section class="hero">
+    <div class="container">
       <h2>Bolos Artesanais Feitos com Amor</h2>
       <p>Transformando momentos especiais em memórias doces há mais de 10 anos</p>
-      <a href="catalogo.html" class="btn-hero">Ver Catálogo</a>
+      <a href="catalogo.html" class="btn-primary">Ver Catálogo</a>
     </div>
   </section>
 
-  <!-- Seção de Produtos -->
-  <section class="produtos-section">
-    <div class="container">
-      <h2 class="section-title">Conheça Nossos Produtos</h2>
-      <p class="section-subtitle">Deliciosos sabores feitos artesanalmente para você</p>
-      
-      <div class="produtos-grid">
-        <div class="produto-card">
-          <div class="produto-image">
-            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop" alt="Bolos">
-            <div class="produto-overlay">
-              <a href="catalogo.html" class="btn-produto">Ver Mais</a>
-            </div>
-          </div>
-          <div class="produto-info">
-            <h3>BOLOS</h3>
-            <p>Bolos personalizados para todas as ocasiões</p>
-          </div>
+  <main class="container">
+    <h2 class="section-title">Nossos Produtos</h2>
+    <p class="section-subtitle">Deliciosos sabores feitos artesanalmente para você</p>
+    
+    <div class="produtos-grid">
+      <div class="produto-card">
+        <div class="produto-image">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop" alt="Bolos">
         </div>
-
-        <div class="produto-card">
-          <div class="produto-image">
-            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&h=400&fit=crop" alt="Tortas">
-            <div class="produto-overlay">
-              <a href="catalogo.html" class="btn-produto">Ver Mais</a>
-            </div>
-          </div>
-          <div class="produto-info">
-            <h3>TORTAS</h3>
-            <p>Tortas doces com sabores incríveis</p>
-          </div>
+        <div class="produto-info">
+          <h3>BOLOS</h3>
+          <p>Bolos personalizados para todas as ocasiões</p>
+          <a href="catalogo.html" class="btn btn-success">Ver Catálogo</a>
         </div>
+      </div>
 
-        <div class="produto-card">
-          <div class="produto-image">
-            <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=600&h=400&fit=crop" alt="Doces">
-            <div class="produto-overlay">
-              <a href="catalogo.html" class="btn-produto">Ver Mais</a>
-            </div>
-          </div>
-          <div class="produto-info">
-            <h3>DOCES</h3>
-            <p>Doces artesanais para adoçar seu dia</p>
-          </div>
+      <div class="produto-card">
+        <div class="produto-image">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&h=400&fit=crop" alt="Tortas">
         </div>
+        <div class="produto-info">
+          <h3>TORTAS</h3>
+          <p>Tortas doces com sabores incríveis</p>
+          <a href="catalogo.html" class="btn btn-success">Ver Catálogo</a>
+        </div>
+      </div>
 
-        <div class="produto-card">
-          <div class="produto-image">
-            <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&h=400&fit=crop" alt="Bebidas">
-            <div class="produto-overlay">
-              <a href="catalogo.html" class="btn-produto">Ver Mais</a>
-            </div>
-          </div>
-          <div class="produto-info">
-            <h3>BEBIDAS</h3>
-            <p>Bebidas geladas para acompanhar</p>
-          </div>
+      <div class="produto-card">
+        <div class="produto-image">
+          <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=600&h=400&fit=crop" alt="Doces">
+        </div>
+        <div class="produto-info">
+          <h3>DOCES</h3>
+          <p>Doces artesanais para adoçar seu dia</p>
+          <a href="catalogo.html" class="btn btn-success">Ver Catálogo</a>
+        </div>
+      </div>
+
+      <div class="produto-card">
+        <div class="produto-image">
+          <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&h=400&fit=crop" alt="Bebidas">
+        </div>
+        <div class="produto-info">
+          <h3>BEBIDAS</h3>
+          <p>Bebidas geladas para acompanhar</p>
+          <a href="catalogo.html" class="btn btn-success">Ver Catálogo</a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Seção Sobre -->
-  <section class="sobre-section">
-    <div class="container">
-      <div class="sobre-content">
-        <div class="sobre-text">
-          <h2>A Confeitaria Maria Silva</h2>
-          <p>Há mais de 10 anos, transformamos momentos especiais em memórias doces. Nossa confeitaria nasceu do talento e dedicação de Maria Silva, confeiteira apaixonada por criar bolos personalizados feitos com muito carinho e atenção aos detalhes.</p>
-          <p>Agora, com o desejo de expandir, abrimos nossas portas para novos clientes, mantendo o mesmo cuidado artesanal que conquistou amigos e familiares.</p>
-          <a href="quem-somos.html" class="btn-sobre">Saiba Mais</a>
-        </div>
-        <div class="sobre-image">
-          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=500&fit=crop" alt="Confeitaria">
-        </div>
-      </div>
+    <div class="card">
+      <h2>A Confeitaria Maria Silva</h2>
+      <p>Há mais de 10 anos, transformamos momentos especiais em memórias doces. Nossa confeitaria nasceu do talento e dedicação de Maria Silva, confeiteira apaixonada por criar bolos personalizados feitos com muito carinho e atenção aos detalhes.</p>
+      <p>Agora, com o desejo de expandir, abrimos nossas portas para novos clientes, mantendo o mesmo cuidado artesanal que conquistou amigos e familiares.</p>
+      <a href="quem-somos.html" class="btn btn-success">Saiba Mais</a>
     </div>
-  </section>
-
-  <!-- Seção Citação -->
-  <section class="quote-section">
-    <div class="container">
-      <blockquote class="quote-text">
-        "As melhores conversas são feitas em torno de um prato de bolo para deixar a alma doce."
-      </blockquote>
-      <p class="quote-author">Maria Silva</p>
-    </div>
-  </section>
+  </main>
 
   <footer>
     <div class="footer-content">
@@ -147,12 +111,10 @@
       </div>
       <div class="footer-section">
         <h3>Links Rápidos</h3>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="quem-somos.html">Quem Somos</a></li>
-          <li><a href="catalogo.html">Catálogo</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="contato.html">Contato</a>
       </div>
       <div class="footer-section">
         <h3>Contato</h3>

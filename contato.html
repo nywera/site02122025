@@ -8,62 +8,58 @@
   <script src="carrinho.js" defer></script>
 </head>
 <body>
-  <!-- Top Bar com Redes Sociais -->
-  <div class="top-bar">
-    <div class="social-icons">
-      <a href="#" aria-label="Facebook">📘</a>
-      <a href="#" aria-label="Twitter">🐦</a>
-      <a href="#" aria-label="Email">📧</a>
-      <a href="#" aria-label="Instagram">📷</a>
-      <a href="#" aria-label="YouTube">▶️</a>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">🎂</span>
+        <div class="logo-text">
+          <h1>Confeitaria Maria Silva</h1>
+          <p>Bolos artesanais feitos com amor</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="carrinho.html" class="carrinho-header">
+          🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+        </a>
+      </div>
     </div>
-    <div class="logo-section">
-      <h1 class="site-title">Confeitaria Maria Silva</h1>
-      <span class="logo-icon">🎂</span>
-    </div>
-    <div class="search-bar">
-      <input type="search" placeholder="Buscar..." aria-label="Buscar">
-      <button type="button" aria-label="Buscar">🔍</button>
-    </div>
-  </div>
+  </header>
 
-  <!-- Menu de Navegação Principal -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="quem-somos.html">Quem Somos</a></li>
-      <li><a href="historia.html">História</a></li>
-      <li><a href="catalogo.html">Catálogo</a></li>
-      <li><a href="contato.html" class="active">Contato</a></li>
-      <li><a href="carrinho.html" class="carrinho-link">
-        🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
-      </a></li>
-    </ul>
+  <nav>
+    <div class="nav-container">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main>
+  <main class="container">
     <h2>Entre em Contato</h2>
     
-    <div class="contact-info">
-      <div class="contact-card">
-        <div class="icon">📞</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 30px 0;">
+      <div class="card" style="text-align: center; padding: 25px;">
+        <div style="font-size: 3em; margin-bottom: 15px;">📞</div>
         <h3>Telefone</h3>
-        <p>(11) 99999-9999</p>
-        <p style="font-size: 0.9em; color: var(--cor-texto-claro);">Segunda a Sábado<br>8h às 18h</p>
+        <p style="font-size: 1.2em; font-weight: 600; color: var(--cor-verde);">(11) 99999-9999</p>
+        <p style="font-size: 0.9em; color: var(--cor-texto-claro); margin-top: 10px;">Segunda a Sábado<br>8h às 18h</p>
       </div>
       
-      <div class="contact-card">
-        <div class="icon">📧</div>
+      <div class="card" style="text-align: center; padding: 25px;">
+        <div style="font-size: 3em; margin-bottom: 15px;">📧</div>
         <h3>Email</h3>
-        <p>contato@confeitariamariasilva.com</p>
-        <p style="font-size: 0.9em; color: var(--cor-texto-claro);">Respondemos em até 24h</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: var(--cor-verde);">contato@confeitariamariasilva.com</p>
+        <p style="font-size: 0.9em; color: var(--cor-texto-claro); margin-top: 10px;">Respondemos em até 24h</p>
       </div>
       
-      <div class="contact-card">
-        <div class="icon">📍</div>
+      <div class="card" style="text-align: center; padding: 25px;">
+        <div style="font-size: 3em; margin-bottom: 15px;">📍</div>
         <h3>Localização</h3>
-        <p>Rio Claro - SP</p>
-        <p style="font-size: 0.9em; color: var(--cor-texto-claro);">Atendimento local e região</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: var(--cor-verde);">Rio Claro - SP</p>
+        <p style="font-size: 0.9em; color: var(--cor-texto-claro); margin-top: 10px;">Atendimento local e região</p>
       </div>
     </div>
 
@@ -75,14 +71,15 @@
           <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
         </div>
         
-        <div class="form-group">
-          <label for="telefone">Telefone *</label>
-          <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required placeholder="seu@email.com">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefone">Telefone *</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+          </div>
         </div>
         
         <div class="form-group">
@@ -96,7 +93,7 @@
         </div>
         
         <div style="text-align: center;">
-          <button type="submit">Enviar Mensagem</button>
+          <button type="submit" class="btn btn-success">Enviar Mensagem</button>
         </div>
       </form>
     </div>
@@ -114,14 +111,34 @@
   </main>
 
   <footer>
-    <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Confeitaria Maria Silva</h3>
+        <p>Bolos personalizados feitos com carinho há mais de 10 anos</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>📞 (11) 99999-9999</p>
+        <p>📧 contato@confeitariamariasilva.com</p>
+        <p>📍 Rio Claro - SP</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+    </div>
   </footer>
 
   <script>
     function handleSubmit(event) {
       event.preventDefault();
       
-      // Coleta os dados do formulário
       const formData = {
         nome: document.getElementById('nome').value,
         telefone: document.getElementById('telefone').value,
@@ -130,13 +147,10 @@
         mensagem: document.getElementById('mensagem').value
       };
       
-      // Simula envio (aqui você integraria com um backend real)
       alert('Obrigado por entrar em contato, ' + formData.nome + '!\n\nRecebemos sua mensagem e retornaremos em breve.\n\nEm breve você receberá um email de confirmação em ' + formData.email);
       
-      // Limpa o formulário
       document.getElementById('contactForm').reset();
     }
   </script>
 </body>
 </html>
-
