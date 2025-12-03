@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Confeitaria Maria Silva</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="carrinho.js" defer></script>
+</head>
+<body>
+  <!-- Top Bar com Redes Sociais -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook">📘</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="Email">📧</a>
+      <a href="#" aria-label="Instagram">📷</a>
+      <a href="#" aria-label="YouTube">▶️</a>
+    </div>
+    <div class="logo-section">
+      <h1 class="site-title">Confeitaria Maria Silva</h1>
+      <span class="logo-icon">🎂</span>
+    </div>
+    <div class="search-bar">
+      <input type="search" placeholder="Buscar..." aria-label="Buscar">
+      <button type="button" aria-label="Buscar">🔍</button>
+    </div>
+  </div>
+
+  <!-- Menu de Navegação Principal -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="catalogo.html" class="active">Catálogo</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="carrinho.html" class="carrinho-link">
+        🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>📒 Catálogo de Bolos e Sabores</h2>
+    
+    <div class="catalogo-grid">
+      <div class="bolo-card">
+        <div class="bolo-image">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Bolo Clássico">
+        </div>
+        <div class="bolo-content">
+          <h3>Bolo Clássico</h3>
+          <p class="bolo-sabores"><strong>Sabores:</strong> Chocolate, Baunilha, Cenoura</p>
+          <p class="bolo-preco">R$ 70/kg</p>
+          <div class="bolo-ingredientes">
+            <strong>Ingredientes:</strong>
+            <p>Farinha de trigo, açúcar, ovos, leite, manteiga, fermento químico, essência natural</p>
+          </div>
+          <button class="btn-adicionar" data-adicionar-carrinho data-produto-id="bolo-classico">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="bolo-card">
+        <div class="bolo-image">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=300&fit=crop" alt="Bolo Recheado">
+        </div>
+        <div class="bolo-content">
+          <h3>Bolo Recheado</h3>
+          <p class="bolo-sabores"><strong>Sabores:</strong> Brigadeiro, Doce de Leite, Ninho com Morango</p>
+          <p class="bolo-preco">R$ 90/kg</p>
+          <div class="bolo-ingredientes">
+            <strong>Ingredientes:</strong>
+            <p>Farinha de trigo, açúcar, ovos, leite condensado, creme de leite, manteiga, fermento químico, frutas frescas</p>
+          </div>
+          <button class="btn-adicionar" data-adicionar-carrinho data-produto-id="bolo-recheado">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="bolo-card">
+        <div class="bolo-image">
+          <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400&h=300&fit=crop" alt="Bolo Gelado">
+        </div>
+        <div class="bolo-content">
+          <h3>Bolo Gelado</h3>
+          <p class="bolo-sabores"><strong>Sabores:</strong> Coco, Abacaxi, Limão</p>
+          <p class="bolo-preco">R$ 85/kg</p>
+          <div class="bolo-ingredientes">
+            <strong>Ingredientes:</strong>
+            <p>Farinha de trigo, açúcar, ovos, leite, leite condensado, creme de leite, coco ralado, frutas</p>
+          </div>
+          <button class="btn-adicionar" data-adicionar-carrinho data-produto-id="bolo-gelado">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="bolo-card">
+        <div class="bolo-image">
+          <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&h=300&fit=crop" alt="Bolo Decorado Personalizado">
+        </div>
+        <div class="bolo-content">
+          <h3>Bolo Decorado Personalizado</h3>
+          <p class="bolo-sabores"><strong>Sabores:</strong> Tema infantil, casamento, aniversário</p>
+          <p class="bolo-preco">A partir de R$ 120/kg</p>
+          <div class="bolo-ingredientes">
+            <strong>Ingredientes:</strong>
+            <p>Farinha de trigo, açúcar, ovos, manteiga, leite, fermento químico, pasta americana, corantes alimentícios</p>
+          </div>
+          <button class="btn-adicionar" data-adicionar-carrinho data-produto-id="bolo-personalizado">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="bolo-card">
+        <div class="bolo-image">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" alt="Bolo Fit/Integral">
+        </div>
+        <div class="bolo-content">
+          <h3>Bolo Fit/Integral</h3>
+          <p class="bolo-sabores"><strong>Sabores:</strong> Banana com Aveia, Cacau 70%</p>
+          <p class="bolo-preco">R$ 95/kg</p>
+          <div class="bolo-ingredientes">
+            <strong>Ingredientes:</strong>
+            <p>Farinha integral, aveia, açúcar mascavo, ovos, óleo de coco, cacau 70%, fermento químico</p>
+          </div>
+          <button class="btn-adicionar" data-adicionar-carrinho data-produto-id="bolo-fit">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🥄 Ingredientes – Transparência Total</h2>
+      <p>Assim como em uma lata de refrigerante, cada bolo vem com lista clara de ingredientes para garantir confiança e segurança alimentar.</p>
+      
+      <h3 style="margin-top: 30px;">Exemplo: Bolo de Brigadeiro</h3>
+      <div class="ingredients-list">
+        <ul>
+          <li>Farinha de trigo enriquecida com ferro e ácido fólico</li>
+          <li>Açúcar refinado</li>
+          <li>Ovos frescos</li>
+          <li>Leite integral pasteurizado</li>
+          <li>Manteiga sem sal</li>
+          <li>Fermento químico (bicarbonato de sódio e ácido cítrico)</li>
+          <li>Chocolate em pó 50% cacau</li>
+          <li>Leite condensado</li>
+          <li>Creme de leite UHT</li>
+        </ul>
+      </div>
+      
+      <p style="margin-top: 20px;">Todos os nossos bolos são preparados com ingredientes frescos e de qualidade, sempre priorizando a segurança alimentar e a satisfação dos nossos clientes.</p>
+    </div>
+
+    <div class="card" style="text-align: center; margin-top: 40px;">
+      <h3>Interessado em algum de nossos bolos?</h3>
+      <p>Entre em contato conosco para fazer sua encomenda personalizada!</p>
+      <a href="contato.html" class="btn">Fazer Encomenda</a>
+    </div>
+  </main>
+
+  <!-- Modal para adicionar ao carrinho -->
+  <div id="modal-adicionar" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharModal()">&times;</span>
+      <h2 style="color: var(--cor-verde); margin-bottom: 20px;">Adicionar ao Carrinho</h2>
+      <div class="modal-produto-info">
+        <h3 id="modal-produto-nome" style="color: var(--cor-verde); margin: 0 0 10px 0;"></h3>
+        <p class="modal-produto-preco" id="modal-produto-preco" style="color: var(--cor-verde); font-size: 1.3em; font-weight: 700; margin: 0;"></p>
+      </div>
+      <form onsubmit="event.preventDefault(); adicionarAoCarrinhoModal();">
+        <input type="hidden" id="modal-produto-id">
+        <div class="form-group">
+          <label for="modal-quantidade">Quantidade (kg):</label>
+          <input type="number" id="modal-quantidade" min="1" value="1" required>
+        </div>
+        <div class="form-group">
+          <label for="modal-sabor">Sabor:</label>
+          <select id="modal-sabor" class="form-control">
+            <option value="">Selecione um sabor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="modal-observacoes">Observações (opcional):</label>
+          <textarea id="modal-observacoes" placeholder="Ex: Data do evento, tema, decoração especial, etc."></textarea>
+        </div>
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+          <button type="button" onclick="fecharModal()" class="btn btn-secundario">Cancelar</button>
+          <button type="submit" class="btn">Adicionar ao Carrinho</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
+

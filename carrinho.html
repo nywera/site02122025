@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho de Compras - Confeitaria Maria Silva</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="carrinho.js" defer></script>
+</head>
+<body>
+  <!-- Top Bar com Redes Sociais -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook">📘</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="Email">📧</a>
+      <a href="#" aria-label="Instagram">📷</a>
+      <a href="#" aria-label="YouTube">▶️</a>
+    </div>
+    <div class="logo-section">
+      <h1 class="site-title">Confeitaria Maria Silva</h1>
+      <span class="logo-icon">🎂</span>
+    </div>
+    <div class="search-bar">
+      <input type="search" placeholder="Buscar..." aria-label="Buscar">
+      <button type="button" aria-label="Buscar">🔍</button>
+    </div>
+  </div>
+
+  <!-- Menu de Navegação Principal -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="carrinho.html" class="active carrinho-link">
+        🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>🛒 Seu Carrinho de Compras</h2>
+    
+    <div id="carrinho-itens" class="carrinho-container">
+      <!-- Itens serão renderizados aqui pelo JavaScript -->
+    </div>
+
+    <div id="carrinho-resumo" class="carrinho-resumo" style="display: none;">
+      <div class="card">
+        <h3>Resumo do Pedido</h3>
+        <div class="resumo-linha">
+          <span>Subtotal:</span>
+          <span id="carrinho-total">R$ 0,00</span>
+        </div>
+        <div class="resumo-linha">
+          <span>Taxa de entrega:</span>
+          <span>A combinar</span>
+        </div>
+        <div class="resumo-total">
+          <span>Total:</span>
+          <span id="carrinho-total-final">R$ 0,00</span>
+        </div>
+        <button onclick="finalizarPedidoWhatsApp()" class="btn btn-finalizar">Finalizar Pedido</button>
+        <a href="catalogo.html" class="btn btn-secundario" style="margin-top: 10px; display: inline-block;">Continuar Comprando</a>
+      </div>
+    </div>
+
+    <!-- Modal de Checkout -->
+    <div id="modal-checkout" class="modal">
+      <div class="modal-content modal-checkout-content">
+        <span class="modal-close" onclick="fecharCheckout()">&times;</span>
+        <h2>Finalizar Encomenda</h2>
+        <form id="form-checkout" onsubmit="finalizarPedido(event)">
+          <div class="form-group">
+            <label for="checkout-nome">Nome Completo *</label>
+            <input type="text" id="checkout-nome" required>
+          </div>
+          <div class="form-group">
+            <label for="checkout-telefone">Telefone *</label>
+            <input type="tel" id="checkout-telefone" required placeholder="(11) 99999-9999">
+          </div>
+          <div class="form-group">
+            <label for="checkout-email">Email *</label>
+            <input type="email" id="checkout-email" required>
+          </div>
+          <div class="form-group">
+            <label for="checkout-endereco">Endereço para Entrega *</label>
+            <input type="text" id="checkout-endereco" required placeholder="Rua, número, bairro">
+          </div>
+          <div class="form-group">
+            <label for="checkout-cidade">Cidade *</label>
+            <input type="text" id="checkout-cidade" required value="Rio Claro">
+          </div>
+          <div class="form-group">
+            <label for="checkout-data">Data de Entrega Desejada *</label>
+            <input type="date" id="checkout-data" required min="">
+          </div>
+          <div class="form-group">
+            <label for="checkout-horario">Horário Preferencial</label>
+            <select id="checkout-horario">
+              <option value="">Selecione</option>
+              <option value="manha">Manhã (8h - 12h)</option>
+              <option value="tarde">Tarde (12h - 18h)</option>
+              <option value="noite">Noite (18h - 20h)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="checkout-observacoes">Observações Adicionais</label>
+            <textarea id="checkout-observacoes" placeholder="Instruções especiais, ponto de referência, etc."></textarea>
+          </div>
+          <div class="resumo-checkout">
+            <h3>Resumo do Pedido</h3>
+            <div id="checkout-resumo-itens"></div>
+            <div class="resumo-total">
+              <span>Total:</span>
+              <span id="checkout-total">R$ 0,00</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <button type="button" onclick="fecharCheckout()" class="btn btn-secundario">Cancelar</button>
+            <button type="submit" class="btn btn-finalizar">Confirmar Encomenda</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    // Atualizar data mínima para hoje
+    document.addEventListener('DOMContentLoaded', function() {
+      const hoje = new Date().toISOString().split('T')[0];
+      const dataInput = document.getElementById('checkout-data');
+      if (dataInput) {
+        dataInput.min = hoje;
+      }
+    });
+
+    // Atualizar resumo quando carrinho mudar
+    const observer = new MutationObserver(function() {
+      atualizarResumo();
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const carrinhoContainer = document.getElementById('carrinho-itens');
+      if (carrinhoContainer) {
+        observer.observe(carrinhoContainer, { childList: true, subtree: true });
+      }
+      atualizarResumo();
+    });
+
+    function atualizarResumo() {
+      const resumo = document.getElementById('carrinho-resumo');
+      const totalElement = document.getElementById('carrinho-total');
+      const totalFinalElement = document.getElementById('carrinho-total-final');
+      
+      if (carrinho.itens.length > 0) {
+        resumo.style.display = 'block';
+        const total = carrinho.calcularTotal();
+        if (totalElement) totalElement.textContent = `R$ ${total.toFixed(2)}`;
+        if (totalFinalElement) totalFinalElement.textContent = `R$ ${total.toFixed(2)}`;
+      } else {
+        resumo.style.display = 'none';
+      }
+    }
+
+    function finalizarPedidoWhatsApp() {
+      if (carrinho.itens.length === 0) {
+        alert('Seu carrinho está vazio!');
+        return;
+      }
+
+      // Formatar mensagem para WhatsApp
+      let mensagem = '🍰 *Pedido - Confeitaria Maria Silva*\n\n';
+      mensagem += 'Olá! Gostaria de fazer o seguinte pedido:\n\n';
+      
+      // Listar itens
+      mensagem += '*Itens do Pedido:*\n';
+      carrinho.itens.forEach((item, index) => {
+        mensagem += `${index + 1}. *${item.nome}*\n`;
+        if (item.sabor) {
+          mensagem += `   Sabor: ${item.sabor}\n`;
+        }
+        mensagem += `   Quantidade: ${item.quantidade}kg\n`;
+        if (item.observacoes) {
+          mensagem += `   Observações: ${item.observacoes}\n`;
+        }
+        mensagem += `   Preço: R$ ${(item.preco * item.quantidade).toFixed(2)}\n\n`;
+      });
+      
+      // Total
+      const total = carrinho.calcularTotal();
+      mensagem += `*Total: R$ ${total.toFixed(2)}*\n\n`;
+      mensagem += 'Por favor, entre em contato para confirmar os detalhes da entrega.';
+      
+      // Codificar mensagem para URL
+      const mensagemEncoded = encodeURIComponent(mensagem);
+      
+      // Número do WhatsApp (formato: 5514996366473 - com código do país e DDD)
+      const whatsappNumber = '5514996366473';
+      
+      // Redirecionar para WhatsApp
+      window.open(`https://wa.me/${whatsappNumber}?text=${mensagemEncoded}`, '_blank');
+    }
+
+    function abrirCheckout() {
+      if (carrinho.itens.length === 0) {
+        alert('Seu carrinho está vazio!');
+        return;
+      }
+
+      const modal = document.getElementById('modal-checkout');
+      const resumoItens = document.getElementById('checkout-resumo-itens');
+      const totalCheckout = document.getElementById('checkout-total');
+
+      // Preencher resumo no checkout
+      resumoItens.innerHTML = carrinho.itens.map(item => `
+        <div class="checkout-item-resumo">
+          <span>${item.nome} ${item.sabor ? `- ${item.sabor}` : ''} x${item.quantidade}kg</span>
+          <span>R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
+        </div>
+      `).join('');
+
+      totalCheckout.textContent = `R$ ${carrinho.calcularTotal().toFixed(2)}`;
+      modal.style.display = 'flex';
+    }
+
+    function fecharCheckout() {
+      document.getElementById('modal-checkout').style.display = 'none';
+    }
+
+    function finalizarPedido(event) {
+      event.preventDefault();
+      
+      const dados = {
+        nome: document.getElementById('checkout-nome').value,
+        telefone: document.getElementById('checkout-telefone').value,
+        email: document.getElementById('checkout-email').value,
+        endereco: document.getElementById('checkout-endereco').value,
+        cidade: document.getElementById('checkout-cidade').value,
+        data: document.getElementById('checkout-data').value,
+        horario: document.getElementById('checkout-horario').value,
+        observacoes: document.getElementById('checkout-observacoes').value,
+        itens: carrinho.itens,
+        total: carrinho.calcularTotal()
+      };
+
+      // Simular envio (aqui você integraria com backend)
+      alert(`✅ Encomenda realizada com sucesso!\n\nOlá ${dados.nome}, recebemos sua encomenda!\n\nTotal: R$ ${dados.total.toFixed(2)}\n\nEm breve entraremos em contato para confirmar os detalhes da entrega.`);
+      
+      // Limpar carrinho
+      carrinho.limparCarrinho();
+      fecharCheckout();
+      
+      // Redirecionar para página inicial
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 2000);
+    }
+
+    // Fechar modal ao clicar fora
+    window.addEventListener('click', function(event) {
+      const modal = document.getElementById('modal-checkout');
+      if (event.target === modal) {
+        fecharCheckout();
+      }
+    });
+  </script>
+</body>
+</html>
+

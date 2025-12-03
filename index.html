@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confeitaria Maria Silva - Página Inicial</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="carrinho.js" defer></script>
+</head>
+<body>
+  <!-- Top Bar com Redes Sociais -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook">📘</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="Email">📧</a>
+      <a href="#" aria-label="Instagram">📷</a>
+      <a href="#" aria-label="YouTube">▶️</a>
+    </div>
+    <div class="logo-section">
+      <h1 class="site-title">Confeitaria Maria Silva</h1>
+      <span class="logo-icon">🎂</span>
+    </div>
+    <div class="search-bar">
+      <input type="search" placeholder="Buscar..." aria-label="Buscar">
+      <button type="button" aria-label="Buscar">🔍</button>
+    </div>
+  </div>
+
+  <!-- Menu de Navegação Principal -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html" class="active">Início</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="carrinho.html" class="carrinho-link">
+        🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h2>Bolos Artesanais Feitos com Amor</h2>
+      <p>Transformando momentos especiais em memórias doces há mais de 10 anos</p>
+      <a href="catalogo.html" class="btn-hero">Ver Catálogo</a>
+    </div>
+  </section>
+
+  <!-- Seção de Produtos -->
+  <section class="produtos-section">
+    <div class="container">
+      <h2 class="section-title">Conheça Nossos Produtos</h2>
+      <p class="section-subtitle">Deliciosos sabores feitos artesanalmente para você</p>
+      
+      <div class="produtos-grid">
+        <div class="produto-card">
+          <div class="produto-image">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop" alt="Bolos">
+            <div class="produto-overlay">
+              <a href="catalogo.html" class="btn-produto">Ver Mais</a>
+            </div>
+          </div>
+          <div class="produto-info">
+            <h3>BOLOS</h3>
+            <p>Bolos personalizados para todas as ocasiões</p>
+          </div>
+        </div>
+
+        <div class="produto-card">
+          <div class="produto-image">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&h=400&fit=crop" alt="Tortas">
+            <div class="produto-overlay">
+              <a href="catalogo.html" class="btn-produto">Ver Mais</a>
+            </div>
+          </div>
+          <div class="produto-info">
+            <h3>TORTAS</h3>
+            <p>Tortas doces com sabores incríveis</p>
+          </div>
+        </div>
+
+        <div class="produto-card">
+          <div class="produto-image">
+            <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=600&h=400&fit=crop" alt="Doces">
+            <div class="produto-overlay">
+              <a href="catalogo.html" class="btn-produto">Ver Mais</a>
+            </div>
+          </div>
+          <div class="produto-info">
+            <h3>DOCES</h3>
+            <p>Doces artesanais para adoçar seu dia</p>
+          </div>
+        </div>
+
+        <div class="produto-card">
+          <div class="produto-image">
+            <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&h=400&fit=crop" alt="Bebidas">
+            <div class="produto-overlay">
+              <a href="catalogo.html" class="btn-produto">Ver Mais</a>
+            </div>
+          </div>
+          <div class="produto-info">
+            <h3>BEBIDAS</h3>
+            <p>Bebidas geladas para acompanhar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section class="sobre-section">
+    <div class="container">
+      <div class="sobre-content">
+        <div class="sobre-text">
+          <h2>A Confeitaria Maria Silva</h2>
+          <p>Há mais de 10 anos, transformamos momentos especiais em memórias doces. Nossa confeitaria nasceu do talento e dedicação de Maria Silva, confeiteira apaixonada por criar bolos personalizados feitos com muito carinho e atenção aos detalhes.</p>
+          <p>Agora, com o desejo de expandir, abrimos nossas portas para novos clientes, mantendo o mesmo cuidado artesanal que conquistou amigos e familiares.</p>
+          <a href="quem-somos.html" class="btn-sobre">Saiba Mais</a>
+        </div>
+        <div class="sobre-image">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=500&fit=crop" alt="Confeitaria">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Citação -->
+  <section class="quote-section">
+    <div class="container">
+      <blockquote class="quote-text">
+        "As melhores conversas são feitas em torno de um prato de bolo para deixar a alma doce."
+      </blockquote>
+      <p class="quote-author">Maria Silva</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Confeitaria Maria Silva</h3>
+        <p>Bolos personalizados feitos com carinho há mais de 10 anos</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>📞 (11) 99999-9999</p>
+        <p>📧 contato@confeitariamariasilva.com</p>
+        <p>📍 Rio Claro - SP</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+    </div>
+  </footer>
+</body>
+</html>

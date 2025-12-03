@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Confeitaria Maria Silva</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="carrinho.js" defer></script>
+</head>
+<body>
+  <!-- Top Bar com Redes Sociais -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook">📘</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="Email">📧</a>
+      <a href="#" aria-label="Instagram">📷</a>
+      <a href="#" aria-label="YouTube">▶️</a>
+    </div>
+    <div class="logo-section">
+      <h1 class="site-title">Confeitaria Maria Silva</h1>
+      <span class="logo-icon">🎂</span>
+    </div>
+    <div class="search-bar">
+      <input type="search" placeholder="Buscar..." aria-label="Buscar">
+      <button type="button" aria-label="Buscar">🔍</button>
+    </div>
+  </div>
+
+  <!-- Menu de Navegação Principal -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="contato.html" class="active">Contato</a></li>
+      <li><a href="carrinho.html" class="carrinho-link">
+        🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Entre em Contato</h2>
+    
+    <div class="contact-info">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h3>Telefone</h3>
+        <p>(11) 99999-9999</p>
+        <p style="font-size: 0.9em; color: var(--cor-texto-claro);">Segunda a Sábado<br>8h às 18h</p>
+      </div>
+      
+      <div class="contact-card">
+        <div class="icon">📧</div>
+        <h3>Email</h3>
+        <p>contato@confeitariamariasilva.com</p>
+        <p style="font-size: 0.9em; color: var(--cor-texto-claro);">Respondemos em até 24h</p>
+      </div>
+      
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <h3>Localização</h3>
+        <p>Rio Claro - SP</p>
+        <p style="font-size: 0.9em; color: var(--cor-texto-claro);">Atendimento local e região</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="text-align: center; margin-bottom: 30px;">Envie sua Mensagem</h3>
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="nome">Nome Completo *</label>
+          <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+        </div>
+        
+        <div class="form-group">
+          <label for="telefone">Telefone *</label>
+          <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="seu@email.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="assunto">Assunto *</label>
+          <input type="text" id="assunto" name="assunto" required placeholder="Ex: Encomenda de bolo de aniversário">
+        </div>
+        
+        <div class="form-group">
+          <label for="mensagem">Mensagem *</label>
+          <textarea id="mensagem" name="mensagem" required placeholder="Conte-nos sobre sua encomenda, data do evento, quantidade de pessoas, tema desejado, etc."></textarea>
+        </div>
+        
+        <div style="text-align: center;">
+          <button type="submit">Enviar Mensagem</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card" style="margin-top: 30px;">
+      <h3>Como Funciona</h3>
+      <ol style="padding-left: 25px; line-height: 2;">
+        <li><strong>Entre em contato:</strong> Use o formulário acima ou ligue para nós</li>
+        <li><strong>Conversamos sobre seu evento:</strong> Data, quantidade de pessoas, tema e preferências</li>
+        <li><strong>Orçamento personalizado:</strong> Enviamos um orçamento detalhado</li>
+        <li><strong>Confirmação:</strong> Após aprovação, iniciamos a produção do seu bolo único</li>
+        <li><strong>Entrega ou retirada:</strong> Combinamos a melhor forma de entrega</li>
+      </ol>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Confeitaria Maria Silva - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      
+      // Coleta os dados do formulário
+      const formData = {
+        nome: document.getElementById('nome').value,
+        telefone: document.getElementById('telefone').value,
+        email: document.getElementById('email').value,
+        assunto: document.getElementById('assunto').value,
+        mensagem: document.getElementById('mensagem').value
+      };
+      
+      // Simula envio (aqui você integraria com um backend real)
+      alert('Obrigado por entrar em contato, ' + formData.nome + '!\n\nRecebemos sua mensagem e retornaremos em breve.\n\nEm breve você receberá um email de confirmação em ' + formData.email);
+      
+      // Limpa o formulário
+      document.getElementById('contactForm').reset();
+    }
+  </script>
+</body>
+</html>
+
