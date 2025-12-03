@@ -14,92 +14,144 @@
         <span class="logo-icon">🎂</span>
         <div class="logo-text">
           <h1>Confeitaria Maria Silva</h1>
-          <p>Bolos artesanais feitos com amor</p>
         </div>
       </div>
+      <nav style="background: transparent; border: none; padding: 0;">
+        <ul style="display: flex; gap: 0; list-style: none; margin: 0; padding: 0;">
+          <li><a href="index.html" style="color: var(--cor-branco); padding: 10px 15px;">Início</a></li>
+          <li><a href="quem-somos.html" style="color: var(--cor-branco); padding: 10px 15px;">Quem Somos</a></li>
+          <li><a href="historia.html" style="color: var(--cor-branco); padding: 10px 15px;">História</a></li>
+          <li><a href="catalogo.html" style="color: var(--cor-branco); padding: 10px 15px;">Catálogo</a></li>
+          <li><a href="contato.html" style="color: var(--cor-branco); padding: 10px 15px;">Contato</a></li>
+        </ul>
+      </nav>
       <div class="header-right">
+        <a href="catalogo.html" class="btn-primary" style="text-decoration: none; padding: 10px 25px; font-size: 0.95em;">Peça Agora</a>
         <a href="carrinho.html" class="carrinho-header">
-          🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+          🛒 <span id="carrinho-contador" class="carrinho-contador">0</span>
         </a>
       </div>
     </div>
   </header>
 
-  <nav>
-    <div class="nav-container">
-      <ul>
-        <li><a href="index.html" class="active">Início</a></li>
-        <li><a href="quem-somos.html">Quem Somos</a></li>
-        <li><a href="historia.html">História</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <section class="hero">
-    <div class="container">
-      <h2>Bolos Artesanais Feitos com Amor</h2>
-      <p>Transformando momentos especiais em memórias doces há mais de 10 anos</p>
-      <a href="catalogo.html" class="btn-primary">Ver Catálogo</a>
+    <div class="hero-content">
+      <h2>Sabores Feitos Para <span class="destaque">Marcar Momentos</span></h2>
+      <p>Cada doce é preparado com muito carinho e atenção aos detalhes. Desde a escolha dos ingredientes até a apresentação final, tudo é pensado para transformar momentos especiais em memórias doces e inesquecíveis.</p>
+      <div class="hero-buttons">
+        <a href="catalogo.html" class="btn-primary">Peça Agora</a>
+        <a href="catalogo.html" class="btn-secondary">Ver Catálogo</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=500&fit=crop" alt="Bolo Artesanal">
+    </div>
+  </section>
+
+  <section class="diferenciais-section">
+    <div class="diferenciais-container">
+      <div class="diferenciais-image">
+        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=500&fit=crop" alt="Doces">
+      </div>
+      <div>
+        <h2 class="section-title" style="text-align: left; margin: 0 0 40px 0; font-size: 2.2em;">Nossos Diferenciais</h2>
+        <div class="diferenciais-list">
+          <div class="diferencial-item">
+            <div class="diferencial-icon">❤️</div>
+            <div class="diferencial-content">
+              <h3>Feitos sob encomenda</h3>
+              <p>Cada bolo é criado com carinho único para você, personalizado conforme sua necessidade e preferência.</p>
+            </div>
+          </div>
+          <div class="diferencial-item">
+            <div class="diferencial-icon">👤</div>
+            <div class="diferencial-content">
+              <h3>Atendimento humanizado</h3>
+              <p>Fale sempre com quem sabe tudo sobre nossos produtos. Atendimento personalizado e dedicado.</p>
+            </div>
+          </div>
+          <div class="diferencial-item">
+            <div class="diferencial-icon">⭐</div>
+            <div class="diferencial-content">
+              <h3>Qualidade garantida</h3>
+              <p>Selecionamos sempre ingredientes frescos e de primeira qualidade para garantir o melhor sabor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <main class="container">
-    <h2 class="section-title">Nossos Produtos</h2>
-    <p class="section-subtitle">Deliciosos sabores feitos artesanalmente para você</p>
+    <h2 class="section-title">Doces Que Criam Momentos</h2>
+    <p class="section-subtitle">Descubra sabores queridinhos e encontre agora seu próximo doce favorito</p>
     
     <div class="produtos-grid">
       <div class="produto-card">
         <div class="produto-image">
-          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop" alt="Bolos">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Bolos">
         </div>
         <div class="produto-info">
           <h3>BOLOS</h3>
-          <p>Bolos personalizados para todas as ocasiões</p>
-          <a href="catalogo.html" class="btn btn-success">Ver Catálogo</a>
+          <p>Crocância, cremosidade e o sabor que encanta sempre. Bolos personalizados para todas as ocasiões.</p>
+          <a href="catalogo.html" class="btn btn-success" style="width: 100%; text-align: center; display: block; margin-top: 15px;">Ver Mais</a>
         </div>
       </div>
 
       <div class="produto-card">
         <div class="produto-image">
-          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&h=400&fit=crop" alt="Tortas">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=300&fit=crop" alt="Brigadeiros">
         </div>
         <div class="produto-info">
-          <h3>TORTAS</h3>
-          <p>Tortas doces com sabores incríveis</p>
-          <a href="catalogo.html" class="btn btn-success">Ver Catálogo</a>
+          <h3>BRIGADEIROS GOURMET</h3>
+          <p>A cremosidade, o sabor e a originalidade do nosso cardápio. Brigadeiros feitos com ingredientes selecionados.</p>
+          <a href="catalogo.html" class="btn btn-success" style="width: 100%; text-align: center; display: block; margin-top: 15px;">Ver Mais</a>
         </div>
       </div>
 
       <div class="produto-card">
         <div class="produto-image">
-          <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=600&h=400&fit=crop" alt="Doces">
+          <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&h=300&fit=crop" alt="Cupcakes">
         </div>
         <div class="produto-info">
-          <h3>DOCES</h3>
-          <p>Doces artesanais para adoçar seu dia</p>
-          <a href="catalogo.html" class="btn btn-success">Ver Catálogo</a>
+          <h3>CUPCAKES</h3>
+          <p>Deliciosos e delicados, com coberturas que derretem. Perfeitos para qualquer ocasião especial.</p>
+          <a href="catalogo.html" class="btn btn-success" style="width: 100%; text-align: center; display: block; margin-top: 15px;">Ver Mais</a>
         </div>
       </div>
 
       <div class="produto-card">
         <div class="produto-image">
-          <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&h=400&fit=crop" alt="Bebidas">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" alt="Brownies">
         </div>
         <div class="produto-info">
-          <h3>BEBIDAS</h3>
-          <p>Bebidas geladas para acompanhar</p>
-          <a href="catalogo.html" class="btn btn-success">Ver Catálogo</a>
+          <h3>BROWNIES</h3>
+          <p>Crocância por fora, macio por dentro e sabor irresistível. O brownie perfeito para adoçar seu dia.</p>
+          <a href="catalogo.html" class="btn btn-success" style="width: 100%; text-align: center; display: block; margin-top: 15px;">Ver Mais</a>
         </div>
       </div>
     </div>
 
-    <div class="card">
-      <h2>A Confeitaria Maria Silva</h2>
-      <p>Há mais de 10 anos, transformamos momentos especiais em memórias doces. Nossa confeitaria nasceu do talento e dedicação de Maria Silva, confeiteira apaixonada por criar bolos personalizados feitos com muito carinho e atenção aos detalhes.</p>
-      <p>Agora, com o desejo de expandir, abrimos nossas portas para novos clientes, mantendo o mesmo cuidado artesanal que conquistou amigos e familiares.</p>
-      <a href="quem-somos.html" class="btn btn-success">Saiba Mais</a>
+    <div style="background: var(--cor-roxo); padding: 60px 40px; border-radius: 20px; margin: 60px 0; text-align: center; color: var(--cor-branco);">
+      <h2 style="color: var(--cor-branco); margin-bottom: 20px; font-size: 2.5em;">Doces Que Transformam Momentos Em Memórias</h2>
+      <p style="font-size: 1.2em; margin-bottom: 30px; opacity: 0.95;">Feitos com carinho para adoçar seus dias</p>
+      <a href="catalogo.html" class="btn-secondary" style="background: var(--cor-branco); color: var(--cor-roxo); border: none;">Peça Agora</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 60px 0; align-items: center;">
+      <div>
+        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&h=600&fit=crop" alt="Maria Silva" style="width: 100%; border-radius: 20px; box-shadow: var(--sombra-hover);">
+      </div>
+      <div>
+        <h2 style="color: var(--cor-texto); margin-bottom: 25px; font-size: 2.2em;">A Essência Que Criou Tudo na Confeitaria Maria Silva</h2>
+        <p style="font-size: 1.1em; line-height: 1.8; color: var(--cor-texto-claro); margin-bottom: 20px;">
+          Há mais de 10 anos, trabalhamos com amor, dedicação e o constante desejo de encantar nossos clientes. Cada bolo é uma história, cada doce é uma memória sendo criada.
+        </p>
+        <p style="font-size: 1.1em; line-height: 1.8; color: var(--cor-texto-claro); margin-bottom: 30px;">
+          Nossa confeitaria nasceu do talento e paixão de Maria Silva, que transforma ingredientes selecionados em momentos inesquecíveis.
+        </p>
+        <a href="quem-somos.html" class="btn-primary">Peça Agora</a>
+      </div>
     </div>
   </main>
 
@@ -107,10 +159,10 @@
     <div class="footer-content">
       <div class="footer-section">
         <h3>Confeitaria Maria Silva</h3>
-        <p>Bolos personalizados feitos com carinho há mais de 10 anos</p>
+        <p>Doces feitos com amor, ingredientes de primeira e o toque especial que só a Confeitaria Maria Silva oferece.</p>
       </div>
       <div class="footer-section">
-        <h3>Links Rápidos</h3>
+        <h3>Links</h3>
         <a href="index.html">Início</a>
         <a href="quem-somos.html">Quem Somos</a>
         <a href="catalogo.html">Catálogo</a>
@@ -129,3 +181,4 @@
   </footer>
 </body>
 </html>
+

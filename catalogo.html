@@ -14,28 +14,25 @@
         <span class="logo-icon">🎂</span>
         <div class="logo-text">
           <h1>Confeitaria Maria Silva</h1>
-          <p>Bolos artesanais feitos com amor</p>
         </div>
       </div>
+      <nav style="background: transparent; border: none; padding: 0;">
+        <ul style="display: flex; gap: 0; list-style: none; margin: 0; padding: 0;">
+          <li><a href="index.html" style="color: var(--cor-branco); padding: 10px 15px;">Início</a></li>
+          <li><a href="quem-somos.html" style="color: var(--cor-branco); padding: 10px 15px;">Quem Somos</a></li>
+          <li><a href="historia.html" style="color: var(--cor-branco); padding: 10px 15px;">História</a></li>
+          <li><a href="catalogo.html" style="color: var(--cor-branco); padding: 10px 15px;">Catálogo</a></li>
+          <li><a href="contato.html" style="color: var(--cor-branco); padding: 10px 15px;">Contato</a></li>
+        </ul>
+      </nav>
       <div class="header-right">
+        <a href="catalogo.html" class="btn-primary" style="text-decoration: none; padding: 10px 25px; font-size: 0.95em;">Peça Agora</a>
         <a href="carrinho.html" class="carrinho-header">
-          🛒 Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span>
+          🛒 <span id="carrinho-contador" class="carrinho-contador">0</span>
         </a>
       </div>
     </div>
   </header>
-
-  <nav>
-    <div class="nav-container">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="quem-somos.html">Quem Somos</a></li>
-        <li><a href="historia.html">História</a></li>
-        <li><a href="catalogo.html" class="active">Catálogo</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </div>
-  </nav>
 
   <main class="container">
     <h2 class="section-title">Catálogo de Bolos e Sabores</h2>
@@ -155,8 +152,8 @@
       <button class="modal-close" onclick="fecharModal()">&times;</button>
       <h2>Adicionar ao Carrinho</h2>
       <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 2px solid var(--cor-borda);">
-        <h3 id="modal-produto-nome" style="color: var(--cor-verde); margin: 0 0 10px 0;"></h3>
-        <p id="modal-produto-preco" style="color: var(--cor-verde); font-size: 1.3em; font-weight: 700; margin: 0;"></p>
+        <h3 id="modal-produto-nome" style="color: var(--cor-roxo); margin: 0 0 10px 0;"></h3>
+        <p id="modal-produto-preco" style="color: var(--cor-roxo); font-size: 1.3em; font-weight: 700; margin: 0;"></p>
       </div>
       <form onsubmit="event.preventDefault(); adicionarAoCarrinhoModal();">
         <input type="hidden" id="modal-produto-id">
